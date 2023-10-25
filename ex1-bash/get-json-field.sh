@@ -24,8 +24,8 @@ echo "$DATA" | while IFS= read -r line; do
         # Extract the child value in the next lines
         while IFS= read -r nested_line; do
             if [[ $nested_line == *\"$CHILD_FIELD\":* ]]; then
-                VALUE="${nested_line##*\": \"}"  # Remove everything before the last ": "
-                VALUE="${VALUE%%\"*}"    # Remove everything after the first "
+                VALUE="${nested_line##*\": \"}" # Remove everything before the last ": "
+                VALUE="${VALUE%%\"*}"  # Remove everything after the first "
                 echo "$VALUE"
                 break
             fi
